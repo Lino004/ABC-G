@@ -1,0 +1,51 @@
+{
+  "general": {
+    "copyright": "ABC CopyRight 2019 Termes et Conditions d’utilisation Powered by FUTURIX"
+  },
+  "user": {
+    "title":"Bienvenue sur ABC - G",
+    "login-title": "Se connecter",
+    "register": "S'inscrire",
+    "forgot-password": "Mot de passe oublié",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "forgot-password-question": "Mot de passe oublié?",
+    "fullname": "Nom complet",
+    "login-button": "Se connecter",
+    "register-button": "S'INSCRIRE",
+    "reset-password-button": "RÉINITIALISER",
+    "buy": "PAYER",
+    "username": "Nom d'utilisateur"
+  },
+  "menu": {
+    "app": "Accueil",
+    "home": "Accueil",
+    "dashboards": "Tableau de bord",
+    "second-menu": "Deuxieme menu",
+    "second": "Deuxieme",
+    "start": "Demarrer",
+    "single": "Single",
+    "pages": "Pages",
+    "charts": "Charts",
+    "search": "Recherche",
+    "login": "Login",
+    "register": "Register",
+    "forgot-password": "Forgot Password",
+    "error": "Error",
+    "applications": "Applications",
+    "todo": "To-do List",
+    "library": "Library",
+    "survey": "Survey",
+    "chat": "Chat",
+    "ui": "UI",
+    "eleves": "Élèves",
+    "list-eleves": "Liste des élèves",
+    "details-eleve": "Details"
+  },
+  "pages": {
+    "magic-is-in-the-details": "MAGIC IS IN THE DETAILS",
+    "error-title": "Ooops... looks like an error occurred!",
+    "error-code": "Error Code",
+    "go-back-home": "GO BACK HOME"
+  }
+}
