@@ -40,7 +40,8 @@
     "ui": "UI",
     "eleves": "Élèves",
     "list-eleves": "Liste des élèves",
-    "details-eleve": "Details"
+    "details-eleve": "Details",
+    "ajout-eleve": "Créer un nouvel élève"
   },
   "pages": {
     "magic-is-in-the-details": "MAGIC IS IN THE DETAILS",

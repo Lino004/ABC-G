@@ -53,7 +53,7 @@
 
             <notes
               v-if="currentNav === 3"
-              :paiement="dataEleve.paiement"/>
+              :notes="dataEleve.notes"/>
 
           </div>
         </b-card>

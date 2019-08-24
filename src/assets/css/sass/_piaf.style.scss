@@ -8088,6 +8088,7 @@ input:-webkit-autofill {
 .no__border .input-group-text{
   border: none
 }
+
 /** Tailles icone */
 .small__icon {
   font-size: 15px;
@@ -8095,11 +8096,15 @@ input:-webkit-autofill {
 .__icon {
   font-size: 20px;
 }
+
+.medium__icon {
+  font-size: 25px;
+}
+
 /** size texte */
 .very__small {
   font-size: 12px;
 }
-
 /** Date picker accueil (present) */
 .present {
   .inputDate{
@@ -8142,4 +8147,16 @@ input:-webkit-autofill {
 
 .rounded_lg_lb{
   border-bottom-right-radius: 800px 800px;
+}
+
+.table th, .table td {
+  border-color: #d7d7d7 !important;
+}
+.bar_stepper{
+  top: 38%;
+  left: 12%;
+}
+
+.card .card-title {
+  color: $theme-color-1
 }

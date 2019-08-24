@@ -28,7 +28,33 @@ const data = [
     ],
     paiement: [
       { status: '2', type: 'Scolarité', montant: 100000, echeance: '20/12/2019' }
-    ]
+    ],
+    notes: {
+      periode1: [
+        { matiere: 'Français', intero1: 12, intero2: 13, intero3: 11, moy: 12, devoir: 12, compo: 14, moyenne: 13, comment: 'qlq' },
+        { matiere: 'Mathématiques', intero1: 14, intero2: 12, intero3: 10, moy: 12, devoir: 13, compo: 12, moyenne: 12.5, comment: 'qlq' },
+        { matiere: 'Physique / Chimie', intero1: 13, intero2: 13, intero3: 13, moy: 13, devoir: 11, compo: 15, moyenne: 13, comment: 'qlq' },
+        { matiere: 'SVT', intero1: 10, intero2: 7, intero3: 10, moy: 9, devoir: 16, compo: 14, moyenne: 15, comment: 'qlq' },
+        { matiere: 'Anglais', intero1: 5, intero2: 5, intero3: 5, moy: 5, devoir: 10, compo: 14, moyenne: 13, comment: 'qlq' },
+        { matiere: 'Histoire / Géographie', intero1: 20, intero2: 18, intero3: 14, moy: 14, devoir: 13, compo: 14, moyenne: 13, comment: 'qlq' }
+      ],
+      periode2: [
+        { matiere: 'Français', intero1: 12, intero2: 13, intero3: 11, moy: 12, devoir: 12, compo: 14, moyenne: 13, comment: 'qlq' },
+        { matiere: 'Mathématiques', intero1: 14, intero2: 12, intero3: 10, moy: 12, devoir: 13, compo: 12, moyenne: 12.5, comment: 'qlq' },
+        { matiere: 'Physique / Chimie', intero1: 13, intero2: 13, intero3: 13, moy: 13, devoir: 11, compo: 15, moyenne: 13, comment: 'qlq' },
+        { matiere: 'SVT', intero1: 10, intero2: 7, intero3: 10, moy: 9, devoir: 16, compo: 14, moyenne: 15, comment: 'qlq' },
+        { matiere: 'Anglais', intero1: 5, intero2: 5, intero3: 5, moy: 5, devoir: 10, compo: 14, moyenne: 13, comment: 'qlq' },
+        { matiere: 'Histoire / Géographie', intero1: 20, intero2: 18, intero3: 14, moy: 14, devoir: 13, compo: 14, moyenne: 13, comment: 'qlq' }
+      ],
+      periode3: [
+        { matiere: 'Français', intero1: 12, intero2: 13, intero3: 11, moy: 12, devoir: 12, compo: 14, moyenne: 13, comment: 'qlq' },
+        { matiere: 'Mathématiques', intero1: 14, intero2: 12, intero3: 10, moy: 12, devoir: 13, compo: 12, moyenne: 12.5, comment: 'qlq' },
+        { matiere: 'Physique / Chimie', intero1: 13, intero2: 13, intero3: 13, moy: 13, devoir: 11, compo: 15, moyenne: 13, comment: 'qlq' },
+        { matiere: 'SVT', intero1: 10, intero2: 7, intero3: 10, moy: 9, devoir: 16, compo: 14, moyenne: 15, comment: 'qlq' },
+        { matiere: 'Anglais', intero1: 5, intero2: 5, intero3: 5, moy: 5, devoir: 10, compo: 14, moyenne: 13, comment: 'qlq' },
+        { matiere: 'Histoire / Géographie', intero1: 20, intero2: 18, intero3: 14, moy: 14, devoir: 13, compo: 14, moyenne: 13, comment: 'qlq' }
+      ]
+    }
   },
   {
     id: 1,

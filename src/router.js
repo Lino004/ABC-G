@@ -25,12 +25,12 @@ const routes = [
       },
       {
         path: 'app/eleves',
-        component: () => import(/* webpackChunkName: "second-menu" */ './views/app/eleves'),
+        component: () => import('./views/app/eleves'),
         redirect: '/app/eleves/list-eleves',
         children: [
-          { path: 'second', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/eleves/Second') },
-          { path: 'list-eleves', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/eleves/List') },
-          { path: 'details-eleve/:id', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/eleves/Details') }
+          { path: 'ajout-eleve', component: () => import('./views/app/eleves/Ajout') },
+          { path: 'list-eleves', component: () => import('./views/app/eleves/List') },
+          { path: 'details-eleve/:id', component: () => import('./views/app/eleves/Details') }
         ]
       },
       {

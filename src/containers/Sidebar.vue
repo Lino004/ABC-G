@@ -115,6 +115,11 @@ export default {
                 type: 'list-eleves',
                 link: '/app/eleves/list-eleves',
                 icon: 'simple-icon-list'
+              },
+              {
+                type: 'ajout-eleve',
+                link: '/app/eleves/ajout-eleve',
+                icon: 'simple-icon-plus'
               }
             ]
           },
