@@ -212,9 +212,6 @@ export default {
         this.pere.msgInvalidProfession = 'Auccune donnee rentree'
       }
     },
-    pereValideContacts () {
-      console.log('ok')
-    },
     mereValideNom () {
       if (this.mere.nom.length >= 1) {
         this.mere.stateNom = true
@@ -294,7 +291,6 @@ export default {
       }
     },
     validatePere () {
-      console.log(this.pere)
       if (this.pere.stateNom &&
           this.pere.statePrenom &&
           this.pere.stateProfession &&
