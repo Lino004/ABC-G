@@ -40,7 +40,11 @@
     "ui": "UI",
     "eleves": "Élèves",
     "list-eleves": "Liste des élèves",
-    "details-eleve": "Details"
+    "details-eleve": "Details",
+    "classes": "Classes",
+    "list-classes": "Liste des classes",
+    "matieres": "Matières",
+    "list-matieres": "Liste des matières"
   },
   "pages": {
     "magic-is-in-the-details": "MAGIC IS IN THE DETAILS",

@@ -34,6 +34,22 @@ const routes = [
         ]
       },
       {
+        path: 'app/classes',
+        component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes'),
+        redirect: '/app/classes/',
+        children: [
+          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/List') },
+        ]
+      },
+      {
+        path: 'app/matieres',
+        component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres'),
+        redirect: '/app/matieres/',
+        children: [
+          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/List') },
+        ]
+      },
+      {
         path: 'app/single',
         component: () => import(/* webpackChunkName: "single" */ './views/app/single')
       }
