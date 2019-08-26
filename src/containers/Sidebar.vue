@@ -95,6 +95,18 @@ export default {
             child: true
           },
           {
+            type: 'classes',
+            link: '',
+            icon: 'iconsminds-university',
+            child: true
+          },
+          {
+            type: 'matieres',
+            link: '',
+            icon: 'iconsminds-open-book',
+            child: true
+          },
+          {
             type: 'pages',
             link: '',
             icon: 'iconsminds-digital-drawing',
@@ -114,6 +126,26 @@ export default {
               {
                 type: 'list-eleves',
                 link: '/app/eleves/list-eleves',
+                icon: 'simple-icon-list'
+              }
+            ]
+          },
+          {
+            parent: 'classes',
+            child: [
+              {
+                type: 'list-classes',
+                link: '/app/classes/',
+                icon: 'simple-icon-list'
+              }
+            ]
+          },
+          {
+            parent: 'matieres',
+            child: [
+              {
+                type: 'list-matieres',
+                link: '/app/matieres/',
                 icon: 'simple-icon-list'
               }
             ]

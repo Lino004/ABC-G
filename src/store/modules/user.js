@@ -42,20 +42,23 @@ export default {
     login ({ commit }, payload) {
       commit('clearError')
       commit('setProcessing', true)
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(payload.email, payload.password)
-        .then(
-          user => {
-            const item = { uid: user.user.uid, ...currentUser }
-            localStorage.setItem('user', JSON.stringify(item))
-            commit('setUser', { uid: user.user.uid, ...currentUser })
-          },
-          err => {
-            localStorage.removeItem('user')
-            commit('setError', err.message)
-          }
-        )
+      const item = { uid: Math.random() + "", ...currentUser}
+      localStorage.setItem('user', JSON.stringify(item))
+      commit('setUser', item)
+      // firebase
+      //   .auth()
+      //   .signInWithEmailAndPassword(payload.email, payload.password)
+      //   .then(
+      //     user => {
+      //       const item = { uid: user.user.uid, ...currentUser }
+      //       localStorage.setItem('user', JSON.stringify(item))
+      //       commit('setUser', { uid: user.user.uid, ...currentUser })
+      //     },
+      //     err => {
+      //       localStorage.removeItem('user')
+      //       commit('setError', err.message)
+      //     }
+      //   )
     },
     signOut ({ commit }) {
       firebase

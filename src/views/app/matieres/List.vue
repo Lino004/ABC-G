@@ -95,11 +95,10 @@
 
 <script>
 import listeEleve from '@/data/listeEleves'
-import TableList from './list/TableList'
 import Grid from './list/Grid'
 
 export default {
-  components: { TableList, Grid },
+  components: {  Grid },
   data () {
     return {
       search: '',

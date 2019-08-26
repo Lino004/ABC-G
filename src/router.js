@@ -39,6 +39,7 @@ const routes = [
         redirect: '/app/classes/',
         children: [
           { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/List') },
+          { path: 'choisir-niveau', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/ChooseLevel') },
         ]
       },
       {
