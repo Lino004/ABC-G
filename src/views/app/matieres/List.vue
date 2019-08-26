@@ -8,17 +8,7 @@
   </b-row>
   <b-row>
     <b-colxx>
-      <b-row align-h="between">
-        <b-colxx>
-          <b-button :variant="currentShow === 1 ? 'primary' : 'light'" class="rounded-0 mr-1 border-0"
-            @click.stop="currentShow = 1">
-            <i class="simple-icon-menu"></i>
-          </b-button>
-          <b-button :variant="currentShow === 2 ? 'primary' : 'light'" class="rounded-0 mr-1 border-0"
-            @click.stop="currentShow = 2">
-            <i class="simple-icon-grid"></i>
-          </b-button>
-        </b-colxx>
+      <b-row align-h="end">
         <b-colxx md="8" lg="6" class="text-right text-center">
           <b-row class="h-100" align-v="center">
             <b-colxx md="3"><b-button class="px-1" block variant="primary">Créer <i class="simple-icon-plus"/></b-button></b-colxx>
@@ -78,17 +68,8 @@
     </b-colxx>
   </b-row>
 
-  <table-list
-    v-if="currentShow === 1"
-    :items="tab"
-    :fields="fields"
-    :currentPage="currentPage"
-    :perPage="perPage"
-    v-on:selected="setSelected($event)"
-  />
-
+  
   <grid
-    v-if="currentShow === 2"
     :items="tab"
     :currentPage="currentPage"
     :perPage="perPage"
