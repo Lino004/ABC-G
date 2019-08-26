@@ -47,6 +47,7 @@ const routes = [
         redirect: '/app/matieres/',
         children: [
           { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/List') },
+          { path: 'choisir-niveau', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/ChooseLevel') },
         ]
       },
       {

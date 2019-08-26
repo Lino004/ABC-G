@@ -36,13 +36,12 @@
     </b-colxx>
   </b-row>
 </template>
-<style lang="css" scoped>
+<style lang="css">
   .card-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1;
     height: 100%;
     width: 100%;
   }
