@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import listeEleve from '@/data/listeEleves'
+import listeMatieres from '@/data/listeMatieres'
 import Grid from './list/Grid'
 
 export default {
@@ -118,7 +118,7 @@ export default {
         { key: 'age', label: 'AGE', tdClass: 'align-middle' },
         { key: 'action', label: 'ACTION', tdClass: 'align-middle' }
       ],
-      items: listeEleve,
+      items: listeMatieres,
       selected: [],
       perPage: 6,
       currentPage: 1,

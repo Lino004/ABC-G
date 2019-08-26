@@ -97,7 +97,7 @@ export default {
           {
             type: 'classes',
             link: '',
-            icon: 'iconsminds-university',
+            icon: 'iconsminds-home',
             child: true
           },
           {

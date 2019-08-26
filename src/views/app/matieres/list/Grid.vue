@@ -24,10 +24,10 @@
             </b-colxx>
           </b-row>
           <div class="card-content">
-            <b-img slot="aside" :src="data.url" width="80" alt="placeholder"></b-img>
-            <h5>{{data.nom}}</h5>
+            <img slot="aside" :src="data.icon" width="80" alt="placeholder"/>
+            <h5>{{data.title}}</h5>
             <div class="d-flex align-items-center">
-              <b-img slot="aside" :src="data.url" width="36" height="36" alt="placeholder"></b-img>
+              <img src="@/assets/images/tab-profil/image@2x1.png" width="36" height="36" alt="placeholder" />
               <p class="m-0">Ange Bally</p>
             </div>
           </div>
