@@ -38,8 +38,8 @@ const routes = [
         component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes'),
         redirect: '/app/classes/',
         children: [
-          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/List') },
-          { path: 'choisir-niveau', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/ChooseLevel') },
+          { path: 'list/:level', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/List') },
+          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/ChooseLevel') },
           { path: 'ajouter', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/Add') },
         ]
       },
@@ -48,8 +48,8 @@ const routes = [
         component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres'),
         redirect: '/app/matieres/',
         children: [
-          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/List') },
-          { path: 'choisir-niveau', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/ChooseLevel') },
+          { path: 'list/:level', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/List') },
+          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/ChooseLevel') },
         ]
       },
       {
