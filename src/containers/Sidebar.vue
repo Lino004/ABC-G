@@ -137,6 +137,11 @@ export default {
                 type: 'list-classes',
                 link: '/app/classes/',
                 icon: 'simple-icon-list'
+              },
+              {
+                type: 'add-class',
+                link: '/app/classes/ajouter',
+                icon: 'simple-icon-plus'
               }
             ]
           },

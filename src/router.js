@@ -40,6 +40,7 @@ const routes = [
         children: [
           { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/List') },
           { path: 'choisir-niveau', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/ChooseLevel') },
+          { path: 'ajouter', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/Add') },
         ]
       },
       {

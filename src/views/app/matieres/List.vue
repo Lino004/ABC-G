@@ -11,7 +11,7 @@
       <b-row align-h="end">
         <b-colxx md="8" lg="6" class="text-right text-center">
           <b-row class="h-100" align-v="center">
-            <b-colxx md="3"><b-button class="px-1" block variant="primary">Créer <i class="simple-icon-plus"/></b-button></b-colxx>
+            <b-colxx md="3"><b-button v-b-modal.create-modal class="px-1" block variant="primary">Créer <i class="simple-icon-plus"/></b-button></b-colxx>
             <b-colxx md="3">
               <b-button
                 class="px-1"
@@ -68,8 +68,19 @@
     </b-colxx>
   </b-row>
 
+  <b-modal @ok="createSubject" id="create-modal" title="Ajouter une matière">
+    <label for="">Nom de la matière</label>
+     <b-form-input v-model="newSubject.name" placeholder=""></b-form-input>
+    <template v-slot:modal-ok>
+      <p class="m-0">Créer</p>
+    </template>
+    <template v-slot:modal-cancel>
+      <p class="m-0">Annuler</p>
+    </template>
+  </b-modal>
   
   <grid
+    @add-click="$bvModal.show('create-modal')"
     :items="tab"
     :currentPage="currentPage"
     :perPage="perPage"
@@ -122,7 +133,8 @@ export default {
       selected: [],
       perPage: 6,
       currentPage: 1,
-      currentShow: 1
+      currentShow: 1,
+      newSubject: {}
     }
   },
   computed: {
@@ -186,6 +198,10 @@ export default {
   methods: {
     setSelected (items) {
       this.selected = items
+    },
+    createSubject() {
+      const subject = JSON.parse(JSON.stringify(this.newSubject))
+      console.log(subject)
     }
   }
 }

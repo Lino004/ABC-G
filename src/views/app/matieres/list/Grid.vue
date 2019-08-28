@@ -1,7 +1,7 @@
 <template>
   <b-row class="align-items-stretch">
     <b-colxx md="3" class="mb-3" >
-      <b-card class="rounded_sm h-100">
+      <b-card @click="$emit('add-click')" class="rounded_sm h-100">
         <div class="card-content">
           <img src="@/assets/images/plus.svg" width="64px" alt="placeholder" />
           <h5 class="text-center mt-4">Ajouter une matière</h5>
