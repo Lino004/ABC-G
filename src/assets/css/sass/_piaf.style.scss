@@ -59,9 +59,9 @@ $sub-menu-width-lg: 220px;
 $sub-menu-width-md: 200px;
 $sub-menu-width-xs: 190px;
 
-$navbar-height: 120px;
+$navbar-height: 55px;
 $navbar-height-xs: 70px;
-$navbar-height-md: 80px;
+$navbar-height-md: 55px;
 $navbar-height-lg: 90px;
 
 $main-margin: 60px;
@@ -1700,7 +1700,7 @@ button {
 .navbar {
   background: $foreground-color;
   height: $navbar-height;
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 0;
   @include depth(1);
 
   #tool-mode-switch {
@@ -2068,7 +2068,7 @@ button {
 
   @include respond-below(lg) {
     height: $navbar-height-md;
-    padding: 1rem 0 1rem 0;
+    padding: 0;
   }
 
   @include respond-below(sm) {
@@ -8159,4 +8159,16 @@ input:-webkit-autofill {
 
 .card .card-title {
   color: $theme-color-1
+}
+
+.navbar .search input {
+  line-height: 1;
+}
+/** Emploi de temps */
+
+.border_planning{
+  border: 0.5px solid #EAF0F4;
+}
+.border_planning_very_sm{
+  border: 0.25px solid #EAF0F4;
 }

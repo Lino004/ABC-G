@@ -26,15 +26,6 @@
         <b-form-group label-cols-sm="2" label="Genre">
           <b-form-select @change="validate" v-model="selectGenre" :options="genres" class="rounded_sm"></b-form-select>
         </b-form-group>
-        <b-form-group label-cols-sm="2" label="Niveau d'instruction">
-          <b-form-select @change="validate" v-model="selectNiveau" :options="niveaux" class="rounded_sm"></b-form-select>
-        </b-form-group>
-        <b-form-group label-cols-sm="2" label="Classe">
-          <b-form-select @change="validate" v-model="selectClasse" :options="classes()" class="rounded_sm"></b-form-select>
-        </b-form-group>
-        <b-form-group label-cols-sm="2" label="Section">
-          <b-form-select @change="validate" v-model="selectSection" :options="section" class="rounded_sm"></b-form-select>
-        </b-form-group>
         <b-form-group label-cols-sm="2" label="Date de naissance">
           <v-date-picker
             mode="single"
@@ -51,16 +42,16 @@
             class="rounded_sm"></b-form-input>
           <b-form-invalid-feedback>{{msgInvalidLieuNaissance}}</b-form-invalid-feedback>
         </b-form-group>
-        <b-form-group label-cols-sm="2" label="Note de santé">
+        <b-form-group label-cols-sm="2" label="Description courte">
           <b-form-textarea
-            v-model="noteSante"
-            @blur="valideNoteSante"
-            placeholder="Ex : Allergie, ..."
+            v-model="descrip"
+            @blur="valideDescrip"
+            placeholder="Ex : Quelque chose a propos de l'enseignant, ..."
             rows="6"
-            :state="stateNoteSante"
+            :state="stateDescrip"
             class="rounded_sm"
           ></b-form-textarea>
-          <b-form-invalid-feedback>{{msgInvalidNoteSante}}</b-form-invalid-feedback>
+          <b-form-invalid-feedback>{{msgInvalidDescrip}}</b-form-invalid-feedback>
         </b-form-group>
       </b-form>
     </b-colxx>
@@ -85,58 +76,17 @@ export default {
         { value: 'H', text: 'Homme' },
         { value: 'F', text: 'Femme' }
       ],
-      selectNiveau: 'P',
-      niveaux: [
-        { value: 'M', text: 'Marternelle' },
-        { value: 'P', text: 'Primaire' },
-        { value: 'S', text: 'Secondaire' }
-      ],
-      selectClasse: '',
-      selectSection: 'A',
-      section: [
-        { value: 'A', text: 'A' }
-      ],
       dateNaissance: new Date(),
       lieuNaissance: '',
       stateLieuNaissance: null,
       msgInvalidLieuNaissance: '',
-      noteSante: '',
-      stateNoteSante: null,
-      msgInvalidNoteSante: ''
+      descrip: '',
+      stateDescrip: null,
+      msgInvalidDescrip: ''
     }
   },
   computed: {},
   methods: {
-    classes () {
-      if (this.selectNiveau === 'P') {
-        this.selectClasse = 'CP1'
-        return [
-          { value: 'CP1', text: 'CP1' },
-          { value: 'CP2', text: 'CP2' },
-          { value: 'CE1', text: 'CE1' },
-          { value: 'CE2', text: 'CE2' },
-          { value: 'CM1', text: 'CM1' },
-          { value: 'CM2', text: 'CM2' }
-        ]
-      }
-      if (this.selectNiveau === 'S') {
-        this.selectClasse = '6e'
-        return [
-          { value: '6e', text: '6e' },
-          { value: '5e', text: '5e' },
-          { value: '4e', text: '4e' },
-          { value: '3e', text: '3e' },
-          { value: '2nd', text: '2nd' },
-          { value: '1er', text: '1er' },
-          { value: 'Tle', text: 'Tle' }
-        ]
-      }
-      this.selectClasse = 'M1'
-      return [
-        { value: 'M1', text: 'Marternelle 1' },
-        { value: 'M2', text: 'Marternelle 2' }
-      ]
-    },
     valideNom () {
       if (this.nom.length >= 1) {
         this.stateNom = true
@@ -176,39 +126,33 @@ export default {
         this.msgInvalidLieuNaissance = 'Auccune donnee rentree'
       }
     },
-    valideNoteSante () {
-      if (this.noteSante.length >= 1) {
-        this.stateNoteSante = true
-        this.msgInvalidNoteSante = ''
+    valideDescrip () {
+      if (this.descrip.length >= 1) {
+        this.stateDescrip = true
+        this.msgInvalidDescrip = ''
         this.validate()
-      } else if (this.noteSante.length > 0) {
-        this.stateNoteSante = false
-        this.msgInvalidNoteSante = 'Entrez au moins 3 caracteres'
+      } else if (this.descrip.length > 0) {
+        this.stateDescrip = false
+        this.msgInvalidDescrip = 'Entrez au moins 3 caracteres'
       } else {
-        this.stateNoteSante = false
-        this.msgInvalidNoteSante = 'Auccune donnee rentree'
+        this.stateDescrip = false
+        this.msgInvalidDescrip = 'Auccune donnee rentree'
       }
     },
     validate () {
       if (this.stateNom &&
           this.statePrenom &&
-          this.stateNoteSante &&
+          this.stateDescrip &&
           this.stateLieuNaissance &&
-          this.selectClasse &&
-          this.selectSection &&
           this.selectGenre &&
-          this.selectNiveau &&
           this.dateNaissance) {
         this.$emit('data', {
           nom: this.nom,
           prenom: this.prenom,
           genres: this.selectGenre,
-          niveau: this.selectNiveau,
-          classe: this.selectClasse,
-          section: this.selectSection,
           data: moment(this.dateNaissance).format('DD/MM/YYYY'),
           lieuDeNaissance: this.lieuNaissance,
-          note: this.noteSante
+          descrip: this.descrip
         })
       } else {
         this.$emit('data', null)

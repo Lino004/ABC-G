@@ -41,7 +41,12 @@
     "eleves": "Élèves",
     "list-eleves": "Liste des élèves",
     "details-eleve": "Details",
-    "ajout-eleve": "Créer un nouvel élève"
+    "ajout-eleve": "Créer un nouvel élève",
+    "enseignants": "Enseignants",
+    "list-enseignants": "Liste des Enseignants",
+    "details-enseignant": "Details",
+    "ajout-enseignant": "Créer un nouvel enseignant",
+    "emploi-de-temps": "Emploi de temps"
   },
   "pages": {
     "magic-is-in-the-details": "MAGIC IS IN THE DETAILS",

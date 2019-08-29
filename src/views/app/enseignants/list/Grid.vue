@@ -14,25 +14,31 @@
                   <template slot="button-content">
                     <i class="simple-icon-options text-primary"></i>
                   </template>
-                  <b-dropdown-item @click.prevent="goToDetails(data.id)"> <i class="simple-icon-eye text-primary mr-2"/> Details</b-dropdown-item>
+                  <b-dropdown-item disabled @click.prevent="goToDetails(data.id)"> <i class="simple-icon-eye text-primary mr-2"/> Details</b-dropdown-item>
                   <b-dropdown-item disabled> <i class="simple-icon-pencil text-primary mr-2"/> Editer</b-dropdown-item>
                   <b-dropdown-item disabled> <i class="simple-icon-trash text-primary mr-2"/> Supprimer</b-dropdown-item>
                 </b-dropdown>
               </b-colxx>
             </b-row>
             <b-row>
-              <b-colxx>
+              <b-colxx xxs="8">
                 <p class="text-muted mb-1">Classe</p>
-                <h6 class="font-weight-bold"> {{data.classe}} {{data.serie}} </h6>
+                <h6 class="font-weight-bold">
+                  <p class="col-8 p-0 m-0 text-truncate">
+                    <span v-for="(cl, i) in data.classes" :key="i">
+                      {{cl.replace(/-/gi, ' ')}},
+                    </span>
+                  </p>
+                </h6>
               </b-colxx>
-              <b-colxx>
+              <b-colxx xxs="4">
                 <p class="text-muted mb-1">Genre</p>
                 <h6 class="font-weight-bold"> {{data.genre}} </h6>
               </b-colxx>
             </b-row>
             <b-row>
               <b-colxx xxs="8">
-                <b-button @click.prevent="goToDetails(data.id)" class="rounded-0" block variant="light">Details</b-button>
+                <b-button disabled @click.prevent="goToDetails(data.id)" class="rounded-0" block variant="light">Details</b-button>
               </b-colxx>
             </b-row>
           </div>

@@ -6,7 +6,7 @@
       :key="i">
       <b-card class="rounded_sm">
         <b-row>
-          <b-colxx class="my-auto" :class="stat.color"><i :class="stat.icon"></i></b-colxx>
+          <b-colxx xxs="2" class="my-auto" :class="stat.color"><i :class="stat.icon"></i></b-colxx>
           <b-colxx class="text-right">
             <p class="h4"> {{stat.title}} </p>
             <p class="h3"> {{stat.nbr}} </p>

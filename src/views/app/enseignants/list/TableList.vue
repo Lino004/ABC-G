@@ -46,13 +46,29 @@
         </div>
       </template>
 
+      <template slot="classes" slot-scope="data">
+        <p class="col-5 p-0 m-0 text-truncate">
+          <span v-for="(cl, i) in data.value" :key="i">
+            {{cl.replace(/-/gi, ' ')}},
+          </span>
+        </p>
+      </template>
+
+      <template slot="matiere" slot-scope="data">
+        <p class="col-5 p-0 m-0 text-truncate">
+          <span v-for="(mt, i) in data.value" :key="i">
+            {{mt.replace(/-/gi, ' ')}},
+          </span>
+        </p>
+      </template>
+
       <template slot="action" slot-scope="data">
         <div class="text-center">
           <b-dropdown variant="" dropleft toggle-class="bg-transparent border-0" :no-caret="true">
             <template slot="button-content">
               <i class="simple-icon-options-vertical text-primary"></i>
             </template>
-            <b-dropdown-item @click.prevent="goToDetails(data.item.id)">
+            <b-dropdown-item disabled @click.prevent="goToDetails(data.item.id)">
               <i class="simple-icon-eye text-primary mr-2"/> Details
             </b-dropdown-item>
             <b-dropdown-item disabled> <i class="simple-icon-pencil text-primary mr-2"/> Editer</b-dropdown-item>

@@ -95,15 +95,15 @@ export default {
             child: true
           },
           {
-            type: 'pages',
+            type: 'enseignants',
             link: '',
-            icon: 'iconsminds-digital-drawing',
+            icon: 'iconsminds-business-man-woman',
             child: true
           },
           {
-            type: 'single',
-            link: '/app/single',
-            icon: 'iconsminds-three-arrow-fork',
+            type: 'emploi-de-temps',
+            link: '/app/emploi-de-temps',
+            icon: 'simple-icon-calendar',
             child: false
           }
         ],
@@ -124,22 +124,17 @@ export default {
             ]
           },
           {
-            parent: 'pages',
+            parent: 'enseignants',
             child: [
               {
-                type: 'login',
-                link: '/user/login',
-                icon: 'simple-icon-user-following'
+                type: 'list-enseignants',
+                link: '/app/enseignants/list-enseignants',
+                icon: 'simple-icon-list'
               },
               {
-                type: 'register',
-                link: '/user/register',
-                icon: 'simple-icon-user-follow'
-              },
-              {
-                type: 'forgot-password',
-                link: '/user/forgot-password',
-                icon: 'simple-icon-user-unfollow'
+                type: 'ajout-enseignant',
+                link: '/app/enseignants/ajout-enseignant',
+                icon: 'simple-icon-plus'
               }
             ]
           }

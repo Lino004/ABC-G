@@ -2,7 +2,7 @@
 <div>
   <b-row>
     <b-colxx xxs="12">
-      <piaf-breadcrumb :heading="$t('menu.eleves')"/>
+      <piaf-breadcrumb :heading="$t('menu.enseignants')"/>
       <div class="separator mb-5"></div>
     </b-colxx>
   </b-row>
@@ -25,7 +25,7 @@
               <b-button
                 class="px-1"
                 block variant="primary"
-                @click="$router.push('/app/eleves/ajout-eleve')">
+                @click="$router.push('/app/enseignants/ajout-enseignant')">
                 Créer <i class="simple-icon-plus"/>
               </b-button>
             </b-colxx>
@@ -68,10 +68,10 @@
               <b-form-select class="rounded_sm shadow-sm" v-model="selectClasse" :options="classes"></b-form-select>
             </b-colxx>
             <b-colxx md="2">
-              <b-form-select class="rounded_sm shadow-sm" v-model="selectSerie" :options="series"></b-form-select>
+              <b-form-select class="rounded_sm shadow-sm" v-model="selectMatiere" :options="matieres"></b-form-select>
             </b-colxx>
             <b-colxx md="2">
-              <b-form-select class="rounded_sm shadow-sm" v-model="selectSection" :options="sections"></b-form-select>
+              <b-form-select class="rounded_sm shadow-sm" v-model="selectNationalite" :options="nationalites"></b-form-select>
             </b-colxx>
             <b-colxx md="2">
               <b-form-select class="rounded_sm shadow-sm" v-model="selectGenre" :options="genres"></b-form-select>
@@ -120,7 +120,7 @@
 </template>
 
 <script>
-import listeEleve from '@/data/listeEleves'
+import listeEnseignants from '@/data/listeEnseignants'
 import TableList from './list/TableList'
 import Grid from './list/Grid'
 
@@ -130,22 +130,22 @@ export default {
     return {
       search: '',
       selectClasse: null,
-      selectSerie: null,
-      selectSection: null,
+      selectMatiere: null,
+      selectNationalite: null,
       selectGenre: null,
       selectAge: null,
       fields: [
         { key: 'select', label: 'SELECTION', tdClass: 'align-middle' },
         { key: 'url', label: '', tdClass: 'align-middle' },
         { key: 'nom', label: 'NOM COMPLET', tdClass: 'align-middle' },
-        { key: 'classe', label: 'CLASSE', tdClass: 'align-middle' },
-        { key: 'serie', label: 'SERIE', tdClass: 'align-middle' },
-        { key: 'section', label: 'SECTION', tdClass: 'align-middle' },
+        { key: 'classes', label: 'CLASSE', tdClass: 'align-middle' },
+        { key: 'matiere', label: 'MATIERE', tdClass: 'align-middle' },
+        { key: 'nationalite', label: 'NATIONALITÉ', tdClass: 'align-middle' },
         { key: 'genre', label: 'GENRE', tdClass: 'align-middle' },
         { key: 'age', label: 'AGE', tdClass: 'align-middle' },
         { key: 'action', label: 'ACTION', tdClass: 'align-middle' }
       ],
-      items: listeEleve,
+      items: listeEnseignants,
       selected: [],
       perPage: 6,
       currentPage: 1,
@@ -156,24 +156,28 @@ export default {
     classes () {
       const data = [{ value: null, text: 'Classe' }]
       this.items.forEach(el => {
-        const find = data.find(x => x.value === el.classe)
-        if (!find) data.push({ value: el.classe, text: el.classe })
+        el.classes.forEach(cl => {
+          const find = data.find(x => x.value === cl)
+          if (!find) data.push({ value: cl, text: cl.replace(/-/gi, ' ') })
+        })
       })
       return data
     },
-    series () {
-      const data = [{ value: null, text: 'Serie' }]
+    matieres () {
+      const data = [{ value: null, text: 'Matière' }]
       this.items.forEach(el => {
-        const find = data.find(x => x.value === el.serie)
-        if (!find) data.push({ value: el.serie, text: el.serie })
+        el.matiere.forEach(mt => {
+          const find = data.find(x => x.value === mt)
+          if (!find) data.push({ value: mt, text: mt.replace(/-/gi, ' ') })
+        })
       })
       return data
     },
-    sections () {
-      const data = [{ value: null, text: 'Section' }]
+    nationalites () {
+      const data = [{ value: null, text: 'Nationalité' }]
       this.items.forEach(el => {
-        const find = data.find(x => x.value === el.section)
-        if (!find) data.push({ value: el.section, text: el.section })
+        const find = data.find(x => x.value === el.nationalite)
+        if (!find) data.push({ value: el.nationalite, text: el.nationalite })
       })
       return data
     },
@@ -196,9 +200,9 @@ export default {
     tab () {
       let data = this.items
       if (this.search) data = data.filter(el => String(el.nom).toLowerCase().includes(this.search.toLowerCase()))
-      if (this.selectClasse) data = data.filter(el => el.classe === this.selectClasse)
-      if (this.selectSerie) data = data.filter(el => el.serie === this.selectSerie)
-      if (this.selectSection) data = data.filter(el => el.section === this.selectSection)
+      if (this.selectClasse) data = data.filter(el => el.classes.includes(this.selectClasse))
+      if (this.selectMatiere) data = data.filter(el => el.matiere.includes(this.selectMatiere))
+      if (this.selectNationalite) data = data.filter(el => el.nationalite === this.selectNationalite)
       if (this.selectGenre) data = data.filter(el => el.genre === this.selectGenre)
       if (this.selectAge) data = data.filter(el => el.age === this.selectAge)
       return data
