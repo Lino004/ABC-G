@@ -42,7 +42,7 @@
 
       <template slot="url" slot-scope="data">
         <div class="text-center">
-          <b-img height="40" :src="data.value" alt="Rounded image"></b-img>
+          <b-img height="40" :src="data.value"></b-img>
         </div>
       </template>
 

@@ -12,7 +12,28 @@
         <b-colxx>
           <b-row class="h-100" align-v="center">
             <b-colxx md="3">
-              <b-form-select class="rounded_sm shadow-sm" v-model="selectClasse" :options="classes"></b-form-select>
+              <b-form-select
+                class="rounded_sm shadow-sm"
+                v-model="selectClasse"
+                :options="classes"
+                :disabled="(classes.length <= 1)"
+              ></b-form-select>
+            </b-colxx>
+            <b-colxx md="3">
+              <b-form-select
+                class="rounded_sm shadow-sm"
+                v-model="selectSection"
+                :options="sections"
+                :disabled="(sections.length <= 1)"
+              ></b-form-select>
+            </b-colxx>
+            <b-colxx md="3">
+              <b-form-select
+                class="rounded_sm shadow-sm"
+                v-model="selectSerie"
+                :options="series"
+                :disabled="(series.length <= 1)"
+              ></b-form-select>
             </b-colxx>
           </b-row>
         </b-colxx>
@@ -31,48 +52,51 @@
       </b-row>
     </b-colxx>
   </b-row>
-  <b-row class="my-3">
-    <b-colxx class="p-0">
-    </b-colxx>
-    <b-colxx
-      v-for="(j, i) in jours"
-      :key="i"
-      class="p-0"
-    >
-      <b-card
-        class="shadow-none text-center"
-        :bg-variant=" j === 'Dimanche' ? 'primary' : ''"
+  <div v-if="selectClasse || selectSection || selectSerie">
+    <b-row class="my-3">
+      <b-colxx class="p-0">
+        <b-row class="h-100" align-v="center">
+          <b-colxx class="text-center">
+            1/{{list.length}}
+          </b-colxx>
+        </b-row>
+      </b-colxx>
+      <b-colxx
+        v-for="(j, i) in jours"
+        :key="i"
+        class="p-0"
       >
-        {{j}}
-      </b-card>
-    </b-colxx>
-  </b-row>
-  <b-row v-for="(plan, i) in planning" :key="i">
-    <b-colxx
-      v-for="(p, j) in plan"
-      :key="j"
-      class="p-0"
-    >
-      <b-card
-        class="shadow-none border_planning p-3"
-        :class="j === 'heure' ? 'border_planning_very_sm text-right' : 'text-center'"
-        style="height: 80px"
-        no-body
-        :bg-variant="j === 'heure' ? 'primary' : ''"
+        <b-card
+          class="shadow-none text-center"
+          :bg-variant=" j === 'Dimanche' ? 'primary' : ''"
+        >
+          {{j}}
+        </b-card>
+      </b-colxx>
+    </b-row>
+    <b-row v-for="(plan, i) in list[0].planning" :key="i">
+      <b-colxx
+        v-for="(p, j) in plan"
+        :key="j"
+        class="p-0"
       >
-        <div v-if="j === 'heure'">
-          <p
-            v-for="(m, index) in p.split(' ')"
-            :key="index"
-            class="mb-0"
-          >{{m}}</p>
-        </div>
-        <div v-else>
-          <p class="mb-0">{{p}}</p>
-        </div>
-      </b-card>
-    </b-colxx>
-  </b-row>
+        <b-card
+          class="shadow-none border_planning p-3"
+          :class="j === 'autre' ? 'border-0 text-right' : 'text-center'"
+          style="height: 80px"
+          no-body
+          :bg-variant="j === 'autre' ? 'primary' : ''"
+        >
+          <div v-if="p.cours">
+            <p class="mb-0">{{p.cours}}</p>
+            <p class="mb-0">{{p.debut}} à {{p.fin}}</p>
+            <b-img height="20" :src="p.url"></b-img> <span class="">{{p.prof}}</span>
+          </div>
+        </b-card>
+      </b-colxx>
+    </b-row>
+  </div>
+  <div v-else class="m-5 text-center font-weight-bold h4"> Choisissez un classe ...</div>
 </div>
 </template>
 
@@ -153,10 +177,24 @@ export default {
   computed: {
     classes () {
       const data = [{ value: null, text: 'Classe' }]
-      this.items.forEach(el => {
-        const find = data.find(x => x.value === el.classe)
-        if (!find) data.push({ value: el.classe, text: el.classe })
-      })
+      if (this.selectSection) {
+        this.list.forEach(el => {
+          const find = data.find(x => x.value === el.classe)
+          if (!find && el.classe) data.push({ value: el.classe, text: el.classe })
+        })
+      }
+      if (this.selectSerie) {
+        this.list.forEach(el => {
+          const find = data.find(x => x.value === el.classe)
+          if (!find && el.classe) data.push({ value: el.classe, text: el.classe })
+        })
+      }
+      if (!this.selectSection && !this.selectSerie) {
+        this.list.forEach(el => {
+          const find = data.find(x => x.value === el.classe)
+          if (!find && el.classe) data.push({ value: el.classe, text: el.classe })
+        })
+      }
       return data
     },
     sections () {
@@ -164,17 +202,51 @@ export default {
       if (this.selectClasse) {
         this.list.forEach(el => {
           const find = data.find(x => x.value === el.section)
-          if (!find) data.push({ value: el.section, text: el.section })
+          if (!find && el.section) data.push({ value: el.section, text: el.section })
         })
       }
-      this.items.forEach(el => {
-        const find = data.find(x => x.value === el.section)
-        if (!find) data.push({ value: el.section, text: el.section })
-      })
+      if (this.selectSerie) {
+        this.list.forEach(el => {
+          const find = data.find(x => x.value === el.section)
+          if (!find && el.section) data.push({ value: el.section, text: el.section })
+        })
+      }
+      if (!this.selectClasse && !this.selectSerie) {
+        this.list.forEach(el => {
+          const find = data.find(x => x.value === el.section)
+          if (!find && el.section) data.push({ value: el.section, text: el.section })
+        })
+      }
+      return data
+    },
+    series () {
+      const data = [{ value: null, text: 'Serie' }]
+      if (this.selectClasse) {
+        this.list.forEach(el => {
+          const find = data.find(x => x.value === el.serie)
+          if (!find && el.serie) data.push({ value: el.serie, text: el.serie })
+        })
+      }
+      if (this.selectSection) {
+        this.list.forEach(el => {
+          const find = data.find(x => x.value === el.serie)
+          if (!find && el.serie) data.push({ value: el.serie, text: el.serie })
+        })
+      }
+      if (!this.selectClasse && !this.selectSection) {
+        this.list.forEach(el => {
+          const find = data.find(x => x.value === el.serie)
+          if (!find && el.serie) data.push({ value: el.serie, text: el.serie })
+        })
+      }
       return data
     },
     list () {
-      return this.items
+      let data = this.items
+      if (this.selectClasse) data = data.filter(el => el.classe === this.selectClasse)
+      if (this.selectSerie) data = data.filter(el => el.serie === this.selectSerie)
+      if (this.selectSection) data = data.filter(el => el.section === this.selectSection)
+      return data
     }
   },
   methods: {}
