@@ -556,6 +556,11 @@ p {
   border-radius: 10px !important;
 }
 
+.rounded_sm_top {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+
 .img-thumbnail {
   border-radius: $border-radius;
   padding: 0;
@@ -8171,4 +8176,17 @@ input:-webkit-autofill {
 }
 .border_planning_very_sm{
   border: 0.25px solid #EAF0F4;
+}
+
+/** positionnement relative */
+.top-12{
+  top: -12px;
+}
+
+.modal-backdrop{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-dialog {
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
