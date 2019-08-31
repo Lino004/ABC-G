@@ -48,17 +48,13 @@
 
       <template slot="classes" slot-scope="data">
         <p class="col-5 p-0 m-0 text-truncate">
-          <span v-for="(cl, i) in data.value" :key="i">
-            {{cl.replace(/-/gi, ' ')}},
-          </span>
+          <span>{{data.value.join(', ')}}</span>
         </p>
       </template>
 
       <template slot="matiere" slot-scope="data">
         <p class="col-5 p-0 m-0 text-truncate">
-          <span v-for="(mt, i) in data.value" :key="i">
-            {{mt.replace(/-/gi, ' ')}},
-          </span>
+          <span>{{data.value.join(', ')}}</span>
         </p>
       </template>
 
@@ -68,7 +64,7 @@
             <template slot="button-content">
               <i class="simple-icon-options-vertical text-primary"></i>
             </template>
-            <b-dropdown-item disabled @click.prevent="goToDetails(data.item.id)">
+            <b-dropdown-item @click.prevent="goToDetails(data.item.id)">
               <i class="simple-icon-eye text-primary mr-2"/> Details
             </b-dropdown-item>
             <b-dropdown-item disabled> <i class="simple-icon-pencil text-primary mr-2"/> Editer</b-dropdown-item>
@@ -114,7 +110,7 @@ export default {
       this.$refs.selectableTable.clearSelected()
     },
     goToDetails (id) {
-      this.$router.push(`details-eleve/${id}`)
+      this.$router.push(`details-enseignant/${id}`)
     }
   }
 }

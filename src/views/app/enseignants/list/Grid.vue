@@ -14,7 +14,7 @@
                   <template slot="button-content">
                     <i class="simple-icon-options text-primary"></i>
                   </template>
-                  <b-dropdown-item disabled @click.prevent="goToDetails(data.id)"> <i class="simple-icon-eye text-primary mr-2"/> Details</b-dropdown-item>
+                  <b-dropdown-item @click.prevent="goToDetails(data.id)"> <i class="simple-icon-eye text-primary mr-2"/> Details</b-dropdown-item>
                   <b-dropdown-item disabled> <i class="simple-icon-pencil text-primary mr-2"/> Editer</b-dropdown-item>
                   <b-dropdown-item disabled> <i class="simple-icon-trash text-primary mr-2"/> Supprimer</b-dropdown-item>
                 </b-dropdown>
@@ -25,9 +25,7 @@
                 <p class="text-muted mb-1">Classe</p>
                 <h6 class="font-weight-bold">
                   <p class="col-8 p-0 m-0 text-truncate">
-                    <span v-for="(cl, i) in data.classes" :key="i">
-                      {{cl.replace(/-/gi, ' ')}},
-                    </span>
+                    <span>{{data.classes.join(', ')}}</span>
                   </p>
                 </h6>
               </b-colxx>
@@ -63,7 +61,7 @@ export default {
   },
   methods: {
     goToDetails (id) {
-      this.$router.push(`details-eleve/${id}`)
+      this.$router.push(`details-enseignant/${id}`)
     }
   }
 }
