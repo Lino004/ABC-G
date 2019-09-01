@@ -39,7 +39,7 @@
           </b-row>
         </b-colxx>
         <b-colxx md="11" lg="9" class="text-right text-center">
-          <b-row class="h-100" align-v="center">
+          <b-row class="h-100 justify-content-end" align-v="end">
             <b-colxx md="2">
               <b-input
                 class="mb-2 mr-sm-2 mb-sm-0 rounded shadow-sm"
@@ -53,15 +53,7 @@
             <b-colxx md="2">
               <b-form-select class="rounded_sm shadow-sm" v-model="selectSerie" :options="series"></b-form-select>
             </b-colxx>
-            <b-colxx md="2">
-              <b-form-select class="rounded_sm shadow-sm" v-model="selectSection" :options="sections"></b-form-select>
-            </b-colxx>
-            <b-colxx md="2">
-              <b-form-select class="rounded_sm shadow-sm" v-model="selectGenre" :options="genres"></b-form-select>
-            </b-colxx>
-            <b-colxx md="2">
-              <b-form-select class="rounded_sm shadow-sm" v-model="selectAge" :options="ages"></b-form-select>
-            </b-colxx>
+            
           </b-row>
         </b-colxx>
       </b-row>
