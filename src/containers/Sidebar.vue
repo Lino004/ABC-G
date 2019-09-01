@@ -99,9 +99,9 @@ export default {
           },
           {
             type: 'parents',
-            link: '',
+            link: '/app/parents',
             icon: 'fas fa-user-friends',
-            child: true
+            child: false
           },
           {
             type: 'classes',
@@ -166,21 +166,6 @@ export default {
                 type: 'list-matieres',
                 link: '/app/matieres/',
                 icon: 'simple-icon-list'
-              }
-            ]
-          },
-          {
-            parent: 'parents',
-            child: [
-              {
-                type: 'list-parents',
-                link: '/app/parents/list-parents',
-                icon: 'simple-icon-list'
-              },
-              {
-                type: 'ajout-parent',
-                link: '/app/parents/ajout-parent',
-                icon: 'simple-icon-plus'
               }
             ]
           },

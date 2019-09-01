@@ -21,15 +21,7 @@
         </b-colxx>
         <b-colxx md="8" lg="6" class="text-right text-center">
           <b-row class="h-100" align-v="center">
-            <b-colxx md="3">
-              <b-button
-                class="px-1"
-                disabled
-                block variant="primary"
-                @click="$router.push('/app/parents/ajout-parent')">
-                Créer <i class="simple-icon-plus"/>
-              </b-button>
-            </b-colxx>
+            <b-colxx md="3"></b-colxx>
             <b-colxx md="3">
               <b-button
                 class="px-1"

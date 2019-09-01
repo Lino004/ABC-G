@@ -27,11 +27,8 @@ const routes = [
       },
       {
         path: 'app/parents',
-        component: () => import('./views/app/parents'),
-        redirect: '/app/parents/list-parents',
+        component: () => import('./views/app/parents/List'),
         children: [
-          { path: 'ajout-parent', component: () => import('./views/app/parents/Ajout') },
-          { path: 'list-parents', component: () => import('./views/app/parents/List') },
           { path: 'details-parent/:id', component: () => import('./views/app/parents/Details') }
         ]
       },
@@ -51,21 +48,21 @@ const routes = [
       },
       {
         path: 'app/classes',
-        component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes'),
+        component: () => import('./views/app/classes'),
         redirect: '/app/classes/',
         children: [
-          { path: 'list/:level', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/List') },
-          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/ChooseLevel') },
-          { path: 'ajouter', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/Add') }
+          { path: 'list/:level', component: () => import('./views/app/classes/List') },
+          { path: '', component: () => import('./views/app/classes/ChooseLevel') },
+          { path: 'ajouter', component: () => import('./views/app/classes/Add') }
         ]
       },
       {
         path: 'app/matieres',
-        component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres'),
+        component: () => import('./views/app/matieres'),
         redirect: '/app/matieres/',
         children: [
-          { path: 'list/:level', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/List') },
-          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/ChooseLevel') }
+          { path: 'list/:level', component: () => import('./views/app/matieres/List') },
+          { path: '', component: () => import('./views/app/matieres/ChooseLevel') }
         ]
       }
     ]
