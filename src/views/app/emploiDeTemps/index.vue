@@ -92,7 +92,7 @@
       </b-colxx>
     </b-row>
   </div>
-  <div v-else class="m-5 text-center font-weight-bold h4"> Choisissez un classe ...</div>
+  <div v-else class="m-5 text-center font-weight-bold h4"> Choisissez une classe ...</div>
 </div>
 </template>
 

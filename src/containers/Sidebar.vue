@@ -29,7 +29,10 @@
 
             <router-link
               v-else
-              :class="{ active : selectedParentMenu===primary.type }"
+              :class="{
+                active : selectedParentMenu===primary.type,
+                l: selectedParentMenu!=primary.type
+              }"
               @click.native="changeSelectedParentHasNoSubmenu(primary.type)"
               :to="primary.link"
               tag="li"
@@ -85,25 +88,25 @@ export default {
           {
             type: 'home',
             link: '/app',
-            icon: 'iconsminds-home',
+            icon: 'fas fa-home',
             child: false
           },
           {
             type: 'eleves',
             link: '',
-            icon: 'iconsminds-student-male-female',
+            icon: 'fas fa-users',
             child: true
           },
           {
             type: 'enseignants',
             link: '',
-            icon: 'iconsminds-business-man-woman',
+            icon: 'fas fa-chalkboard-teacher',
             child: true
           },
           {
             type: 'emploi-de-temps',
             link: '/app/emploi-de-temps',
-            icon: 'simple-icon-calendar',
+            icon: 'fas fa-calendar-alt',
             child: false
           }
         ],
@@ -188,7 +191,7 @@ export default {
         ) {
           this.changeSideMenuStatus({ step: 3, classNames: this.menuType })
         } else if (
-          currentClasses.includes('menu-hidden') &&
+          currentClasses.includes('') &&
           (this.menuClickCount === 1 || this.menuClickCount === 3)
         ) {
           this.changeSideMenuStatus({ step: 2, classNames: this.menuType })
@@ -243,7 +246,7 @@ export default {
       ) {
         this.changeSideMenuStatus({ step: 2, classNames: this.menuType })
       } else if (
-        currentClasses.includes('menu-hidden') ||
+        currentClasses.includes('') ||
         currentClasses.includes('menu-mobile')
       ) {
         this.changeSideMenuStatus({ step: 0, classNames: this.menuType })

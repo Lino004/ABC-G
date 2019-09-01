@@ -8190,3 +8190,15 @@ input:-webkit-autofill {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+li.l.active a  {
+  color: $primary-color !important;
+}
+
+li a  {
+  color: $muted-color;
+}
+
+li.l.active:after  {
+  background-color: $foreground-color !important;
+}

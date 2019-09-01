@@ -1,5 +1,5 @@
 <template>
-  <b-card class="present rounded_sm h-100">
+  <b-card class="present rounded_sm h-100 mb-3">
     <calendar-view
       style="min-height:250px"
       :events="calendar.events"

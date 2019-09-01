@@ -1,12 +1,12 @@
 <template>
-  <b-card class="present rounded_sm">
+  <b-card class="present rounded_sm mb-3">
     <b-row>
       <b-colxx>
         <h6>126 Messages</h6>
       </b-colxx>
       <b-colxx>
         <b-row align-h="end" align-v="center">
-          <b-colxx xxs="3">
+          <b-colxx xxs="4">
             <v-date-picker
               mode="single"
               v-model="selectedValueSingle"

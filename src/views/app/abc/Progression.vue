@@ -1,5 +1,5 @@
 <template>
-  <b-card class="h-100 rounded_sm">
+  <b-card class="h-100 rounded_sm my-3">
     <b-row align-h="between" align-v="center">
       <b-colxx></b-colxx>
       <b-colxx class="text-right"><i class="simple-icon-options text-muted"/></b-colxx>

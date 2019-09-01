@@ -3,12 +3,13 @@
   <b-row class="mb-3">
     <b-colxx xxs="6" lg="3"
       v-for="(stat, i) in statNbr"
-      :key="i">
-      <b-card class="rounded_sm">
+      :key="i"
+      class="px-2">
+      <b-card class="rounded_sm mb-3">
         <b-row>
           <b-colxx xxs="2" class="my-auto" :class="stat.color"><i :class="stat.icon"></i></b-colxx>
-          <b-colxx class="text-right">
-            <p class="h4"> {{stat.title}} </p>
+          <b-colxx xxs="10" class="text-right">
+            <p class="h4 text-truncate"> {{stat.title}} </p>
             <p class="h3"> {{stat.nbr}} </p>
           </b-colxx>
         </b-row>
@@ -36,7 +37,7 @@
           <progression/>
         </b-colxx>
       </b-row>
-      <b-row class="mb-3">
+      <b-row class="my-3">
         <b-colxx>
           <b-card class="mb-4 rounded_sm" no-body>
             <div class="d-flex flex-row">
