@@ -104,6 +104,18 @@ export default {
             child: true
           },
           {
+            type: 'classes',
+            link: '',
+            icon: 'fas fa-store-alt',
+            child: true
+          },
+          {
+            type: 'matieres',
+            link: '',
+            icon: 'fas fa-book-reader',
+            child: true
+          },
+          {
             type: 'enseignants',
             link: '',
             icon: 'fas fa-chalkboard-teacher',
@@ -129,6 +141,31 @@ export default {
                 type: 'ajout-eleve',
                 link: '/app/eleves/ajout-eleve',
                 icon: 'simple-icon-plus'
+              }
+            ]
+          },
+          {
+            parent: 'classes',
+            child: [
+              {
+                type: 'list-classes',
+                link: '/app/classes/',
+                icon: 'simple-icon-list'
+              },
+              {
+                type: 'add-class',
+                link: '/app/classes/ajouter',
+                icon: 'simple-icon-plus'
+              }
+            ]
+          },
+          {
+            parent: 'matieres',
+            child: [
+              {
+                type: 'list-matieres',
+                link: '/app/matieres/',
+                icon: 'simple-icon-list'
               }
             ]
           },

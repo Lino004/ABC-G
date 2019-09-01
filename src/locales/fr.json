@@ -50,7 +50,13 @@
     "list-parents": "Liste des parents",
     "details-parent": "Details",
     "ajout-parent": "Créer un nouvel parent",
-    "emploi-de-temps": "Emploi de temps"
+    "emploi-de-temps": "Emploi de temps",
+    "classes": "Classes",
+    "list-classes": "Liste des classes",
+    "matieres": "Matières",
+    "list-matieres": "Liste des matières",
+    "add-class": "Ajouter une classe",
+    "list": "Liste"
   },
   "pages": {
     "magic-is-in-the-details": "MAGIC IS IN THE DETAILS",

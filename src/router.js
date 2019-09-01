@@ -48,6 +48,25 @@ const routes = [
       {
         path: 'app/emploi-de-temps',
         component: () => import('./views/app/emploiDeTemps/index')
+      },
+      {
+        path: 'app/classes',
+        component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes'),
+        redirect: '/app/classes/',
+        children: [
+          { path: 'list/:level', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/List') },
+          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/ChooseLevel') },
+          { path: 'ajouter', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/Add') }
+        ]
+      },
+      {
+        path: 'app/matieres',
+        component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres'),
+        redirect: '/app/matieres/',
+        children: [
+          { path: 'list/:level', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/List') },
+          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/ChooseLevel') }
+        ]
       }
     ]
   },
