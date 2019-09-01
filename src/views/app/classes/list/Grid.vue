@@ -45,7 +45,7 @@
     height: 100%;
     width: 100%;
   }
-  
+
 </style>
 <script>
 export default {
@@ -54,7 +54,7 @@ export default {
     return {}
   },
   watch: {},
- 
+
   methods: {
     goToDetails (id) {
       this.$router.push(`details-eleve/${id}`)

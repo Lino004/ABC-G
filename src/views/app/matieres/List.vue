@@ -78,7 +78,7 @@
       <p class="m-0">Annuler</p>
     </template>
   </b-modal>
-  
+
   <grid
     @add-click="$bvModal.show('create-modal')"
     :items="tab"
@@ -109,7 +109,7 @@ import listeMatieres from '@/data/listeMatieres'
 import Grid from './list/Grid'
 
 export default {
-  components: {  Grid },
+  components: { Grid },
   data () {
     return {
       search: '',
@@ -199,7 +199,7 @@ export default {
     setSelected (items) {
       this.selected = items
     },
-    createSubject() {
+    createSubject () {
       const subject = JSON.parse(JSON.stringify(this.newSubject))
       console.log(subject)
     }

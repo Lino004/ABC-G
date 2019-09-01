@@ -40,7 +40,7 @@ const routes = [
         children: [
           { path: 'list/:level', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/List') },
           { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/ChooseLevel') },
-          { path: 'ajouter', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/Add') },
+          { path: 'ajouter', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/classes/Add') }
         ]
       },
       {
@@ -49,7 +49,7 @@ const routes = [
         redirect: '/app/matieres/',
         children: [
           { path: 'list/:level', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/List') },
-          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/ChooseLevel') },
+          { path: '', component: () => import(/* webpackChunkName: "second-menu" */ './views/app/matieres/ChooseLevel') }
         ]
       },
       {

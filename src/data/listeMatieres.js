@@ -1,36 +1,35 @@
 
-
 export default [
   {
-    title: "Anglais",
+    title: 'Anglais',
     icon: '/matieres/anglais.png'
   },
   {
-    title: "Physique",
+    title: 'Physique',
     icon: '/matieres/physique.png'
   },
   {
-    title: "Informatique",
+    title: 'Informatique',
     icon: '/matieres/informatique.png'
   },
   {
-    title: "Mathématiques",
+    title: 'Mathématiques',
     icon: '/matieres/mathématiques.png'
   },
   {
-    title: "Français",
+    title: 'Français',
     icon: '/matieres/français.png'
   },
   {
-    title: "SVT",
+    title: 'SVT',
     icon: '/matieres/svt.png'
   },
   {
-    title: "Espagnol",
+    title: 'Espagnol',
     icon: '/matieres/espagnol.png'
   },
   {
-    title: "Dessin",
+    title: 'Dessin',
     icon: '/matieres/dessin.png'
-  },
+  }
 ]

@@ -42,7 +42,7 @@ export default {
     login ({ commit }, payload) {
       commit('clearError')
       commit('setProcessing', true)
-      const item = { uid: Math.random() + "", ...currentUser}
+      const item = { uid: Math.random() + '', ...currentUser }
       localStorage.setItem('user', JSON.stringify(item))
       commit('setUser', item)
       // firebase

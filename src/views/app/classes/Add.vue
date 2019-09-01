@@ -74,7 +74,7 @@
       </div>
     </div>
   </div>
-  
+
 </template>
 <style scoped>
 .card-content {
@@ -88,15 +88,15 @@
 </style>
 <script>
 import listeMatieres from '@/data/listeMatieres'
-import Banner from "@/components/Common/Banner"
+import Banner from '@/components/Common/Banner'
 export default {
   components: { Banner },
-  data() {
+  data () {
     return {
       selectedClass: null,
       items: listeMatieres,
       classes: [
-        {value: "terminale-s1", text: "Terminal S-1"}
+        { value: 'terminale-s1', text: 'Terminal S-1' }
       ]
     }
   }

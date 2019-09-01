@@ -1,7 +1,7 @@
 <template>
   <div>
     <banner title="Liste des classes" />
-    
+
     <h2 class="text-center mt-2 font-weight-bold">Choisir un niveau académique...</h2>
     <b-row class="mt-5" align-h="center">
       <b-colxx md="3" class="mb-3" >
@@ -42,14 +42,12 @@
       </b-colxx>
     </b-row>
   </div>
-  
+
 </template>
 
-
-
 <script>
-import Banner from "@/components/Common/Banner"
+import Banner from '@/components/Common/Banner'
 export default {
-  components: {Banner}
+  components: { Banner }
 }
 </script>
