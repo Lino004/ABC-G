@@ -1,5 +1,5 @@
 <template>
-  <b-card class="h-100 rounded_sm">
+  <b-card class="h-100 rounded_sm mb-3">
     <b-row>
       <b-colxx>
         <h6>Notifications</h6>

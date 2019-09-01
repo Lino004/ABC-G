@@ -15,8 +15,8 @@
                     <i class="simple-icon-options text-primary"></i>
                   </template>
                   <b-dropdown-item @click.prevent="goToDetails(data.id)"> <i class="simple-icon-eye text-primary mr-2"/> Details</b-dropdown-item>
-                  <b-dropdown-item href="#"> <i class="simple-icon-pencil text-primary mr-2"/> Editer</b-dropdown-item>
-                  <b-dropdown-item href="#"> <i class="simple-icon-trash text-primary mr-2"/> Supprimer</b-dropdown-item>
+                  <b-dropdown-item disabled> <i class="simple-icon-pencil text-primary mr-2"/> Editer</b-dropdown-item>
+                  <b-dropdown-item disabled> <i class="simple-icon-trash text-primary mr-2"/> Supprimer</b-dropdown-item>
                 </b-dropdown>
               </b-colxx>
             </b-row>
@@ -32,7 +32,7 @@
             </b-row>
             <b-row>
               <b-colxx xxs="8">
-                <b-button class="rounded-0" block variant="light">Details</b-button>
+                <b-button @click.prevent="goToDetails(data.id)" class="rounded-0" block variant="light">Details</b-button>
               </b-colxx>
             </b-row>
           </div>

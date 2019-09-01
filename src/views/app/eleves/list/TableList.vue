@@ -42,7 +42,7 @@
 
       <template slot="url" slot-scope="data">
         <div class="text-center">
-          <b-img height="40" :src="data.value" alt="Rounded image"></b-img>
+          <b-img height="40" :src="data.value"></b-img>
         </div>
       </template>
 
@@ -55,8 +55,8 @@
             <b-dropdown-item @click.prevent="goToDetails(data.item.id)">
               <i class="simple-icon-eye text-primary mr-2"/> Details
             </b-dropdown-item>
-            <b-dropdown-item> <i class="simple-icon-pencil text-primary mr-2"/> Editer</b-dropdown-item>
-            <b-dropdown-item> <i class="simple-icon-trash text-primary mr-2"/> Supprimer</b-dropdown-item>
+            <b-dropdown-item disabled> <i class="simple-icon-pencil text-primary mr-2"/> Editer</b-dropdown-item>
+            <b-dropdown-item disabled> <i class="simple-icon-trash text-primary mr-2"/> Supprimer</b-dropdown-item>
           </b-dropdown>
         </div>
       </template>

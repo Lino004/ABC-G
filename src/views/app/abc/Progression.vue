@@ -1,16 +1,16 @@
 <template>
-  <b-card class="h-100 rounded_sm">
+  <b-card class="h-100 rounded_sm my-3">
     <b-row align-h="between" align-v="center">
       <b-colxx></b-colxx>
       <b-colxx class="text-right"><i class="simple-icon-options text-muted"/></b-colxx>
     </b-row>
     <b-row class="h-100" align-h="center" align-v="center">
-      <b-colxx>
+      <b-colxx xxs="12">
         <div class="text-right text-success">
           <i class="iconsminds-turn-right h4"/> + 3,24
         </div>
       </b-colxx>
-      <b-colxx xss="12">
+      <b-colxx xxs="12">
         <radial-progress-bar
           id="cercle4"
           class="mx-auto"

@@ -2,7 +2,7 @@
   <div class="m-5">
     <b-row class="mb-5">
       <b-colxx class="text-center">
-        <b-button-group class="shadow-sm">
+        <b-button-group class="shadow-sm rounded_sm">
           <b-button
             class="rounded_sm"
             :variant="currentTrim === 1 ? 'primary' : 'light'"
@@ -56,6 +56,34 @@
 
           <div slot="HEAD[comment]"></div>
 
+          <div slot="intero1" slot-scope="data">
+            <h5><b-badge variant="light">{{data.value}}</b-badge></h5>
+          </div>
+
+          <div slot="intero2" slot-scope="data">
+            <h5><b-badge variant="light">{{data.value}}</b-badge></h5>
+          </div>
+
+          <div slot="intero3" slot-scope="data">
+            <h5><b-badge variant="light">{{data.value}}</b-badge></h5>
+          </div>
+
+          <div slot="moy" slot-scope="data">
+            <h5><b-badge variant="light">{{data.value}}</b-badge></h5>
+          </div>
+
+          <div slot="devoir" slot-scope="data">
+            <h5><b-badge variant="light">{{data.value}}</b-badge></h5>
+          </div>
+
+          <div slot="compo" slot-scope="data">
+            <h5><b-badge variant="light">{{data.value}}</b-badge></h5>
+          </div>
+
+          <div slot="moyenne" slot-scope="data">
+            <h5><b-badge variant="light">{{data.value}}</b-badge></h5>
+          </div>
+
         </b-table>
       </b-colxx>
     </b-row>
@@ -69,24 +97,26 @@ export default {
     return {
       currentTrim: 1,
       fields: [
-        { key: 'matiere', label: 'Matière', tdClass: ['bg-primary', 'text-center', 'border-0'], thClass: ['border-bottom-0  border-top-0'] },
-        { key: 'i1', label: '1', tdClass: ['text-center'], thClass: ['text-center'] },
-        { key: 'i2', label: '2', tdClass: ['text-center'], thClass: ['text-center'] },
-        { key: 'i3', label: '3', tdClass: ['text-center'], thClass: ['text-center'] },
-        { key: 'moy', label: 'Moy', tdClass: ['text-center'], thClass: ['text-center'] },
-        { key: 'devoir', label: 'Devoir', tdClass: ['text-center'], thClass: ['border-bottom-0  border-top-0'] },
-        { key: 'compo', label: 'Compo', tdClass: ['text-center'], thClass: ['border-bottom-0  border-top-0'] },
-        { key: 'moyenne', label: 'Moyenne', tdClass: ['text-center'], thClass: ['border-bottom-0  border-top-0'] },
-        { key: 'comment', label: 'Appréciation générale', tdClass: ['text-center'], thClass: ['border-bottom-0  border-top-0'] }
-      ],
-      items: [
-        { matiere: 'Français', i1: 1, i2: 1, i3: 1, moy: 12, devoir: 12, compo: 14, moyenne: 13, comment: 'qlq' },
-        { matiere: 'Mathématiques', i1: 2, i2: 2, i3: 2, moy: 12, devoir: 12, compo: 14, moyenne: 13, comment: 'qlq' },
-        { matiere: 'Physique / Chimie', i1: 3, i2: 3, i3: 3, moy: 12, devoir: 12, compo: 14, moyenne: 13, comment: 'qlq' },
-        { matiere: 'SVT', i1: 4, i2: 4, i3: 4, moy: 12, devoir: 12, compo: 14, moyenne: 13, comment: 'qlq' },
-        { matiere: 'Anglais', i1: 5, i2: 5, i3: 5, moy: 12, devoir: 12, compo: 14, moyenne: 13, comment: 'qlq' },
-        { matiere: 'Histoire / Géographie', i1: 5, i2: 5, i3: 5, moy: 12, devoir: 12, compo: 14, moyenne: 13, comment: 'qlq' }
+        { key: 'matiere', label: 'Matière', tdClass: ['bg-primary', 'text-center', 'border-0', 'align-middle'], thClass: ['border-bottom-0  border-top-0'] },
+        { key: 'intero1', label: '1', tdClass: ['text-center', 'align-middle'], thClass: ['text-center'] },
+        { key: 'intero2', label: '2', tdClass: ['text-center', 'align-middle'], thClass: ['text-center'] },
+        { key: 'intero3', label: '3', tdClass: ['text-center', 'align-middle'], thClass: ['text-center'] },
+        { key: 'moy', label: 'Moy', tdClass: ['text-center', 'align-middle'], thClass: ['text-center'] },
+        { key: 'devoir', label: 'Devoir', tdClass: ['text-center', 'align-middle'], thClass: ['border-bottom-0  border-top-0'] },
+        { key: 'compo', label: 'Compo', tdClass: ['text-center', 'align-middle'], thClass: ['border-bottom-0  border-top-0'] },
+        { key: 'moyenne', label: 'Moyenne', tdClass: ['text-center', 'align-middle'], thClass: ['border-bottom-0  border-top-0'] },
+        { key: 'comment', label: 'Appréciation générale', tdClass: ['text-center', 'align-middle'], thClass: ['border-bottom-0  border-top-0'] }
       ]
+    }
+  },
+  computed: {
+    items () {
+      if (this.notes) {
+        if (this.currentTrim === 1) return this.notes.periode1
+        if (this.currentTrim === 2) return this.notes.periode2
+        return this.notes.periode3
+      }
+      return []
     }
   }
 }

@@ -24,10 +24,11 @@
         @mouseenter="isSearchOver=true"
         @mouseleave="isSearchOver=false"
       >
-        <b-input
+        <b-form-input
           :placeholder="$t('menu.search')"
           @keypress.native.enter="search"
           v-model="searchKeyword"
+          size="sm"
         />
         <span class="search-icon pt-2 bg-primary" @click="searchClick">
           <i class="text-white simple-icon-magnifier"></i>

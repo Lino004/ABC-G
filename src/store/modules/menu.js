@@ -40,8 +40,8 @@ const mutations = {
         nextClasses = 'menu-default'
       } else if (currentClasses.includes('menu-sub-hidden')) {
         nextClasses = 'menu-sub-hidden'
-      } else if (currentClasses.includes('menu-hidden')) {
-        nextClasses = 'menu-hidden'
+      } else if (currentClasses.includes('')) {
+        nextClasses = ''
       }
       clickIndex = 0
     } else if (clickIndex % 4 === 1) {
@@ -54,8 +54,8 @@ const mutations = {
         nextClasses = 'menu-default sub-hidden'
       } else if (currentClasses.includes('menu-sub-hidden')) {
         nextClasses = 'menu-sub-hidden main-hidden sub-hidden'
-      } else if (currentClasses.includes('menu-hidden')) {
-        nextClasses = 'menu-hidden main-show-temporary'
+      } else if (currentClasses.includes('')) {
+        nextClasses = ' main-show-temporary'
       }
     } else if (clickIndex % 4 === 2) {
       if (
@@ -67,8 +67,8 @@ const mutations = {
         nextClasses = 'menu-default main-hidden sub-hidden'
       } else if (currentClasses.includes('menu-sub-hidden')) {
         nextClasses = 'menu-sub-hidden sub-hidden'
-      } else if (currentClasses.includes('menu-hidden')) {
-        nextClasses = 'menu-hidden main-show-temporary sub-show-temporary'
+      } else if (currentClasses.includes('')) {
+        nextClasses = ' main-show-temporary sub-show-temporary'
       }
     } else if (clickIndex % 4 === 3) {
       if (
@@ -80,8 +80,8 @@ const mutations = {
         nextClasses = 'menu-default sub-hidden'
       } else if (currentClasses.includes('menu-sub-hidden')) {
         nextClasses = 'menu-sub-hidden sub-show-temporary'
-      } else if (currentClasses.includes('menu-hidden')) {
-        nextClasses = 'menu-hidden main-show-temporary'
+      } else if (currentClasses.includes('')) {
+        nextClasses = ' main-show-temporary'
       }
     }
     if (currentClasses.includes('menu-mobile')) {

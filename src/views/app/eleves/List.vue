@@ -21,7 +21,14 @@
         </b-colxx>
         <b-colxx md="8" lg="6" class="text-right text-center">
           <b-row class="h-100" align-v="center">
-            <b-colxx md="3"><b-button class="px-1" block variant="primary">Créer <i class="simple-icon-plus"/></b-button></b-colxx>
+            <b-colxx md="3">
+              <b-button
+                class="px-1"
+                block variant="primary"
+                @click="$router.push('/app/eleves/ajout-eleve')">
+                Créer <i class="simple-icon-plus"/>
+              </b-button>
+            </b-colxx>
             <b-colxx md="3">
               <b-button
                 class="px-1"
@@ -31,8 +38,8 @@
                 Supprimer <i class="simple-icon-trash"/>
               </b-button>
             </b-colxx>
-            <b-colxx md="3"><b-button class="px-1" block variant="primary">Importer <i class="iconsminds-left-1"/></b-button></b-colxx>
-            <b-colxx md="3"><b-button class="px-1" block variant="primary">Exporter <i class="iconsminds-right-1"/></b-button></b-colxx>
+            <b-colxx md="3"><b-button disabled class="px-1" block variant="primary">Importer <i class="iconsminds-left-1"/></b-button></b-colxx>
+            <b-colxx md="3"><b-button disabled class="px-1" block variant="primary">Exporter <i class="iconsminds-right-1"/></b-button></b-colxx>
           </b-row>
         </b-colxx>
       </b-row>

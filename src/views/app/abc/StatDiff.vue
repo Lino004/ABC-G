@@ -1,5 +1,5 @@
 <template>
-  <b-card class="present rounded_sm">
+  <b-card class="present rounded_sm my-3">
     <b-row align-h="between" align-v="center">
       <b-colxx>
         <p class="mb-0">Élèves en difficulté</p>

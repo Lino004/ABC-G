@@ -1,5 +1,5 @@
 <template>
-  <b-card class="present rounded_sm">
+  <b-card class="present rounded_sm mb-3">
     <b-row align-h="end" align-v="center">
       <b-colxx xxs="2">
         <v-date-picker
