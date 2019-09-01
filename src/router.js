@@ -64,6 +64,15 @@ const routes = [
           { path: 'list/:level', component: () => import('./views/app/matieres/List') },
           { path: '', component: () => import('./views/app/matieres/ChooseLevel') }
         ]
+      },
+      {
+        path: 'app/notes',
+        component: () => import('./views/app/notes'),
+        redirect: '/app/notes/',
+        children: [
+          { path: 'dashboard/:level', component: () => import('./views/app/notes/Dashboard') },
+          { path: '', component: () => import('./views/app/notes/ChooseLevel') }
+        ]
       }
     ]
   },
