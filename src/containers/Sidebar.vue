@@ -98,6 +98,12 @@ export default {
             child: true
           },
           {
+            type: 'parents',
+            link: '',
+            icon: 'fas fa-user-friends',
+            child: true
+          },
+          {
             type: 'enseignants',
             link: '',
             icon: 'fas fa-chalkboard-teacher',
@@ -122,6 +128,21 @@ export default {
               {
                 type: 'ajout-eleve',
                 link: '/app/eleves/ajout-eleve',
+                icon: 'simple-icon-plus'
+              }
+            ]
+          },
+          {
+            parent: 'parents',
+            child: [
+              {
+                type: 'list-parents',
+                link: '/app/parents/list-parents',
+                icon: 'simple-icon-list'
+              },
+              {
+                type: 'ajout-parent',
+                link: '/app/parents/ajout-parent',
                 icon: 'simple-icon-plus'
               }
             ]

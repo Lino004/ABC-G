@@ -38,8 +38,8 @@
                 Supprimer <i class="simple-icon-trash"/>
               </b-button>
             </b-colxx>
-            <b-colxx md="3"><b-button class="px-1" block variant="primary">Importer <i class="iconsminds-left-1"/></b-button></b-colxx>
-            <b-colxx md="3"><b-button class="px-1" block variant="primary">Exporter <i class="iconsminds-right-1"/></b-button></b-colxx>
+            <b-colxx md="3"><b-button disabled class="px-1" block variant="primary">Importer <i class="iconsminds-left-1"/></b-button></b-colxx>
+            <b-colxx md="3"><b-button disabled class="px-1" block variant="primary">Exporter <i class="iconsminds-right-1"/></b-button></b-colxx>
           </b-row>
         </b-colxx>
       </b-row>

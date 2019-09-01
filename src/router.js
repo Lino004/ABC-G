@@ -26,6 +26,16 @@ const routes = [
         ]
       },
       {
+        path: 'app/parents',
+        component: () => import('./views/app/parents'),
+        redirect: '/app/parents/list-parents',
+        children: [
+          { path: 'ajout-parent', component: () => import('./views/app/parents/Ajout') },
+          { path: 'list-parents', component: () => import('./views/app/parents/List') },
+          { path: 'details-parent/:id', component: () => import('./views/app/parents/Details') }
+        ]
+      },
+      {
         path: 'app/enseignants',
         component: () => import('./views/app/enseignants'),
         redirect: '/app/enseignants/list-enseignants',

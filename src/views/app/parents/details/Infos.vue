@@ -11,9 +11,6 @@
           <p> {{detail.value}} </p>
         </div>
       </b-colxx>
-      <b-colxx md="6">
-        <b-button disabled class="rounded_sm" variant="primary">Voir documents</b-button>
-      </b-colxx>
     </b-row>
   </div>
 </template>

@@ -2,7 +2,7 @@
 <div>
   <b-row>
     <b-colxx xxs="12">
-      <piaf-breadcrumb :heading="$t('menu.eleves')"/>
+      <piaf-breadcrumb :heading="$t('menu.parents')"/>
       <div class="separator mb-5"></div>
     </b-colxx>
   </b-row>
@@ -24,8 +24,9 @@
             <b-colxx md="3">
               <b-button
                 class="px-1"
+                disabled
                 block variant="primary"
-                @click="$router.push('/app/eleves/ajout-eleve')">
+                @click="$router.push('/app/parents/ajout-parent')">
                 Créer <i class="simple-icon-plus"/>
               </b-button>
             </b-colxx>
@@ -56,7 +57,7 @@
           </b-row>
         </b-colxx>
         <b-colxx md="11" lg="9" class="text-right text-center">
-          <b-row class="h-100" align-v="center">
+          <b-row class="h-100" align-v="center" align-h="end">
             <b-colxx md="2">
               <b-input
                 class="mb-2 mr-sm-2 mb-sm-0 rounded shadow-sm"
@@ -65,13 +66,10 @@
               ></b-input>
             </b-colxx>
             <b-colxx md="2">
-              <b-form-select class="rounded_sm shadow-sm" v-model="selectClasse" :options="classes"></b-form-select>
+              <b-form-select class="rounded_sm shadow-sm" v-model="selectClasse" :options="nbrEnfants"></b-form-select>
             </b-colxx>
             <b-colxx md="2">
-              <b-form-select class="rounded_sm shadow-sm" v-model="selectSerie" :options="series"></b-form-select>
-            </b-colxx>
-            <b-colxx md="2">
-              <b-form-select class="rounded_sm shadow-sm" v-model="selectSection" :options="sections"></b-form-select>
+              <b-form-select class="rounded_sm shadow-sm" v-model="selectNationalite" :options="nationalites"></b-form-select>
             </b-colxx>
             <b-colxx md="2">
               <b-form-select class="rounded_sm shadow-sm" v-model="selectGenre" :options="genres"></b-form-select>
@@ -120,7 +118,7 @@
 </template>
 
 <script>
-import listeEleve from '@/data/listeEleves'
+import listeParents from '@/data/listeParents'
 import TableList from './list/TableList'
 import Grid from './list/Grid'
 
@@ -130,22 +128,21 @@ export default {
     return {
       search: '',
       selectClasse: null,
-      selectSerie: null,
-      selectSection: null,
+      selectNationalite: null,
       selectGenre: null,
       selectAge: null,
       fields: [
         { key: 'select', label: 'SELECTION', tdClass: 'align-middle' },
         { key: 'url', label: '', tdClass: 'align-middle' },
         { key: 'nom', label: 'NOM COMPLET', tdClass: 'align-middle' },
-        { key: 'classe', label: 'CLASSE', tdClass: 'align-middle' },
-        { key: 'serie', label: 'SERIE', tdClass: 'align-middle' },
-        { key: 'section', label: 'SECTION', tdClass: 'align-middle' },
+        { key: 'nbrEnfants', label: "NOMBRES D'ENFANT", tdClass: 'align-middle' },
+        { key: 'email', label: 'EMAIL', tdClass: 'align-middle' },
+        { key: 'nationalite', label: 'NATIONALITÉ', tdClass: 'align-middle' },
         { key: 'genre', label: 'GENRE', tdClass: 'align-middle' },
         { key: 'age', label: 'AGE', tdClass: 'align-middle' },
         { key: 'action', label: 'ACTION', tdClass: 'align-middle' }
       ],
-      items: listeEleve,
+      items: listeParents,
       selected: [],
       perPage: 6,
       currentPage: 1,
@@ -153,27 +150,19 @@ export default {
     }
   },
   computed: {
-    classes () {
-      const data = [{ value: null, text: 'Classe' }]
+    nbrEnfants () {
+      const data = [{ value: null, text: "Nbr. d'enfants" }]
       this.items.forEach(el => {
-        const find = data.find(x => x.value === el.classe)
-        if (!find) data.push({ value: el.classe, text: el.classe })
+        const find = data.find(x => x.value === el.nbrEnfants)
+        if (!find) data.push({ value: el.nbrEnfants, text: el.nbrEnfants })
       })
       return data
     },
-    series () {
-      const data = [{ value: null, text: 'Serie' }]
+    nationalites () {
+      const data = [{ value: null, text: 'Nationalité' }]
       this.items.forEach(el => {
-        const find = data.find(x => x.value === el.serie)
-        if (!find) data.push({ value: el.serie, text: el.serie })
-      })
-      return data
-    },
-    sections () {
-      const data = [{ value: null, text: 'Section' }]
-      this.items.forEach(el => {
-        const find = data.find(x => x.value === el.section)
-        if (!find) data.push({ value: el.section, text: el.section })
+        const find = data.find(x => x.value === el.nationalite)
+        if (!find) data.push({ value: el.nationalite, text: el.nationalite })
       })
       return data
     },
@@ -196,9 +185,8 @@ export default {
     tab () {
       let data = this.items
       if (this.search) data = data.filter(el => String(el.nom).toLowerCase().includes(this.search.toLowerCase()))
-      if (this.selectClasse) data = data.filter(el => el.classe === this.selectClasse)
-      if (this.selectSerie) data = data.filter(el => el.serie === this.selectSerie)
-      if (this.selectSection) data = data.filter(el => el.section === this.selectSection)
+      if (this.selectClasse) data = data.filter(el => el.nbrEnfants.includes(this.selectClasse))
+      if (this.selectNationalite) data = data.filter(el => el.nationalite === this.selectNationalite)
       if (this.selectGenre) data = data.filter(el => el.genre === this.selectGenre)
       if (this.selectAge) data = data.filter(el => el.age === this.selectAge)
       return data
