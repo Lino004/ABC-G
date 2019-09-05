@@ -138,7 +138,7 @@ export default {
             link: '/app/bulletin',
             icon: 'fas fa-file-contract',
             child: false
-          },
+          }
         ],
         secondary: [
           {

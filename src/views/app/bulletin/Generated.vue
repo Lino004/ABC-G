@@ -1,7 +1,7 @@
 <template>
 <div>
   <p class="font-weight-medium" style="font-size: 2rem; ">Liste des bulletins générés</p>
-  
+
   <b-row class="my-5">
     <b-colxx>
       <b-row align-h="between" align-v="center">
@@ -51,7 +51,6 @@
     v-on:selected="setSelected($event)"
   />
 
-  
   <b-pagination
     v-model="currentPage"
     :total-rows="rows"
@@ -66,7 +65,7 @@
       <i v-else>{{ page }}</i>
     </span>
   </b-pagination>
-  
+
 </div>
 </template>
 
@@ -164,7 +163,7 @@ export default {
     setSelected (items) {
       this.selected = items
     },
-    generate() {
+    generate () {
 
     }
   }

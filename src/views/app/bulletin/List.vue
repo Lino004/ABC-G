@@ -90,7 +90,6 @@
     v-on:selected="setSelected($event)"
   />
 
-  
   <b-pagination
     v-model="currentPage"
     :total-rows="rows"
@@ -110,7 +109,7 @@
     <template v-slot:modal-ok>
       <p class="m-0">OK</p>
     </template>
-    
+
   </b-modal>
 </div>
 </template>
@@ -209,7 +208,7 @@ export default {
     setSelected (items) {
       this.selected = items
     },
-    generate() {
+    generate () {
 
     }
   }

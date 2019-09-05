@@ -73,7 +73,7 @@
       <template v-slot:modal-cancel>
         <p class="m-0">Exporter</p>
       </template>
-      
+
     </b-modal>
   </div>
 </template>
@@ -112,10 +112,10 @@ export default {
       this.$refs.selectableTable.clearSelected()
     },
     download (data) {
-      console.log("download", data)
+      console.log('download', data)
     },
     print (data) {
-      console.log("print", data)
+      console.log('print', data)
     }
   }
 }

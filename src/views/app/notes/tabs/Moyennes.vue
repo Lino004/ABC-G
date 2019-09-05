@@ -90,17 +90,17 @@ export default {
       currentTerm: 1,
       items: Array(10).fill(
         {
-          francais: "Delian Koffi", 
-          anglais: 10, 
-          maths: 10, 
-          PCT: 15, 
+          francais: 'Delian Koffi',
+          anglais: 10,
+          maths: 10,
+          PCT: 15,
           SVT: 15,
           Philosophie: 15,
           EPS: 15,
-          moyenneTrimestrielle:15,
-          appreciation: "Peut mieux faire",
-          rang: "1er",
-          _rowVariant: "light"
+          moyenneTrimestrielle: 15,
+          appreciation: 'Peut mieux faire',
+          rang: '1er',
+          _rowVariant: 'light'
         }
       )
     }
