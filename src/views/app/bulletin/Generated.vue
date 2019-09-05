@@ -1,34 +1,8 @@
 <template>
 <div>
-  <b-row>
-    <b-colxx xxs="12">
-      <piaf-breadcrumb :heading="$t('menu.matieres')"/>
-      <div class="separator mb-5"></div>
-    </b-colxx>
-  </b-row>
-  <b-row>
-    <b-colxx>
-      <b-row align-h="end">
-        <b-colxx md="8" lg="6" class="text-right text-center">
-          <b-row class="h-100" align-v="center">
-            <b-colxx md="3"><b-button v-b-modal.create-modal class="px-1" block variant="primary">Créer <i class="simple-icon-plus"/></b-button></b-colxx>
-            <b-colxx md="3">
-              <b-button
-                class="px-1"
-                block
-                variant="primary"
-                :disabled="selected.length === 0">
-                Supprimer <i class="simple-icon-trash"/>
-              </b-button>
-            </b-colxx>
-            <b-colxx md="3"><b-button class="px-1" block variant="primary">Importer <i class="iconsminds-left-1"/></b-button></b-colxx>
-            <b-colxx md="3"><b-button class="px-1" block variant="primary">Exporter <i class="iconsminds-right-1"/></b-button></b-colxx>
-          </b-row>
-        </b-colxx>
-      </b-row>
-    </b-colxx>
-  </b-row>
-  <b-row class="my-3">
+  <p class="font-weight-medium" style="font-size: 2rem; ">Liste des bulletins générés</p>
+  
+  <b-row class="my-5">
     <b-colxx>
       <b-row align-h="between" align-v="center">
         <b-colxx md="1" lg="3">
@@ -39,7 +13,7 @@
           </b-row>
         </b-colxx>
         <b-colxx md="11" lg="9" class="text-right text-center">
-          <b-row class="h-100 justify-content-end" align-v="end">
+          <b-row class="h-100" align-v="center">
             <b-colxx md="2">
               <b-input
                 class="mb-2 mr-sm-2 mb-sm-0 rounded shadow-sm"
@@ -53,32 +27,31 @@
             <b-colxx md="2">
               <b-form-select class="rounded_sm shadow-sm" v-model="selectSerie" :options="series"></b-form-select>
             </b-colxx>
-
+            <b-colxx md="2">
+              <b-form-select class="rounded_sm shadow-sm" v-model="selectSection" :options="sections"></b-form-select>
+            </b-colxx>
+            <b-colxx md="2">
+              <b-form-select class="rounded_sm shadow-sm" v-model="selectGenre" :options="genres"></b-form-select>
+            </b-colxx>
+            <b-colxx md="2">
+              <b-form-select class="rounded_sm shadow-sm" v-model="selectAge" :options="ages"></b-form-select>
+            </b-colxx>
           </b-row>
         </b-colxx>
       </b-row>
     </b-colxx>
   </b-row>
 
-  <b-modal @ok="createSubject" id="create-modal" title="Ajouter une matière">
-    <label for="">Nom de la matière</label>
-     <b-form-input v-model="newSubject.name" placeholder=""></b-form-input>
-    <template v-slot:modal-ok>
-      <p class="m-0">Créer</p>
-    </template>
-    <template v-slot:modal-cancel>
-      <p class="m-0">Annuler</p>
-    </template>
-  </b-modal>
-
-  <grid
-    @add-click="$bvModal.show('create-modal')"
+  <generated-list
+    v-if="currentShow === 1"
     :items="tab"
+    :fields="fields"
     :currentPage="currentPage"
     :perPage="perPage"
     v-on:selected="setSelected($event)"
   />
 
+  
   <b-pagination
     v-model="currentPage"
     :total-rows="rows"
@@ -93,15 +66,16 @@
       <i v-else>{{ page }}</i>
     </span>
   </b-pagination>
+  
 </div>
 </template>
 
 <script>
-import listeMatieres from '@/data/listeMatieres'
-import Grid from './list/Grid'
+import listeEleve from '@/data/listeEleves'
+import GeneratedList from './list/GeneratedList'
 
 export default {
-  components: { Grid },
+  components: { GeneratedList },
   data () {
     return {
       search: '',
@@ -121,12 +95,11 @@ export default {
         { key: 'age', label: 'AGE', tdClass: 'align-middle' },
         { key: 'action', label: 'ACTION', tdClass: 'align-middle' }
       ],
-      items: listeMatieres,
+      items: listeEleve, // changer à liste des bulletins générés
       selected: [],
       perPage: 6,
       currentPage: 1,
-      currentShow: 1,
-      newSubject: {}
+      currentShow: 1
     }
   },
   computed: {
@@ -191,9 +164,8 @@ export default {
     setSelected (items) {
       this.selected = items
     },
-    createSubject () {
-      const subject = JSON.parse(JSON.stringify(this.newSubject))
-      console.log(subject)
+    generate() {
+
     }
   }
 }

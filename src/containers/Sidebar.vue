@@ -132,7 +132,13 @@ export default {
             link: '/app/notes',
             icon: 'fas fa-clipboard',
             child: false
-          }
+          },
+          {
+            type: 'bulletin',
+            link: '/app/bulletin',
+            icon: 'fas fa-file-contract',
+            child: false
+          },
         ],
         secondary: [
           {
