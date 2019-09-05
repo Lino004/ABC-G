@@ -64,6 +64,25 @@ const routes = [
           { path: 'list/:level', component: () => import('./views/app/matieres/List') },
           { path: '', component: () => import('./views/app/matieres/ChooseLevel') }
         ]
+      },
+      {
+        path: 'app/bulletin',
+        component: () => import('./views/app/bulletin'),
+        redirect: '/app/bulletin/',
+        children: [
+          { path: 'list/:level', component: () => import('./views/app/bulletin/List') },
+          { path: 'generated/:level', component: () => import('./views/app/bulletin/Generated') },
+          { path: '', component: () => import('./views/app/bulletin/ChooseLevel') }
+        ]
+      },
+      {
+        path: 'app/notes',
+        component: () => import('./views/app/notes'),
+        redirect: '/app/notes/',
+        children: [
+          { path: 'dashboard/:level', component: () => import('./views/app/notes/Dashboard') },
+          { path: '', component: () => import('./views/app/notes/ChooseLevel') }
+        ]
       }
     ]
   },

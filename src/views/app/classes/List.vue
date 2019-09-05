@@ -3,8 +3,6 @@
     <banner title="Liste des classes" />
     <grid
       :items="classes"
-      :currentPage="currentPage"
-      :perPage="perPage"
       v-on:selected="setSelected($event)"
     />
 

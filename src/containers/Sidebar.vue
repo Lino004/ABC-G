@@ -126,6 +126,18 @@ export default {
             link: '/app/emploi-de-temps',
             icon: 'fas fa-calendar-alt',
             child: false
+          },
+          {
+            type: 'notes',
+            link: '/app/notes',
+            icon: 'fas fa-clipboard',
+            child: false
+          },
+          {
+            type: 'bulletin',
+            link: '/app/bulletin',
+            icon: 'fas fa-file-contract',
+            child: false
           }
         ],
         secondary: [
